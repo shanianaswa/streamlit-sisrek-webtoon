@@ -34,14 +34,7 @@ def load_data():
     webtoon_df.set_index('judul', inplace=True)
     return webtoon_df
 
-def load_data():
-    try:
-        webtoon_df = pd.read_excel('webtoon-scraper.xlsx')
-        return webtoon_df
-    except FileNotFoundError:
-        raise FileNotFoundError("File 'webtoon-scraper.xlsx' tidak ditemukan. Pastikan file ada di lokasi yang benar.")
-    except ImportError as e:
-        raise ImportError(f"Library yang diperlukan tidak tersedia: {e}")
+
 
 webtoon_df = load_data()
 
