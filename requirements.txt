@@ -4,3 +4,4 @@ streamlit==1.41.1
 scikit-learn==1.6.0
 pip==22.2.2
 sastrawi==1.0.1
+openpyxl
