@@ -34,8 +34,6 @@ def load_data():
     webtoon_df.set_index('judul', inplace=True)
     return webtoon_df
 
-
-
 webtoon_df = load_data()
 
 # Membuat TF-IDF dan Cosine Similarity
@@ -67,6 +65,10 @@ st.sidebar.markdown("📊 *Fitur Utama:*")
 st.sidebar.markdown("- *Input Judul*")
 st.sidebar.markdown("- *Rekomendasi Terbaik*")
 
+# Tambahkan daftar webtoon yang tersedia
+st.subheader("📜 Daftar Webtoon yang Tersedia")
+st.dataframe(webtoon_df.reset_index()[['judul']], use_container_width=True)
+
 webtoon = st.text_input("Masukkan Judul Webtoon", placeholder="Misal: 'True Beauty'")
 rekomendasi = st.button("🎯 Cari Rekomendasi")
 
@@ -79,4 +81,4 @@ if rekomendasi:
 
 # Tambahkan footer
 st.markdown("---")
-st.markdown("22.12.2645 Rizki Abdullah dan 22.12.2663 Putri Shania")
+st.markdown("22.12.2645 Rizki Abdullah dan 22.12.2663 Putri Shania") 
