@@ -65,10 +65,6 @@ st.sidebar.markdown("📊 *Fitur Utama:*")
 st.sidebar.markdown("- *Input Judul*")
 st.sidebar.markdown("- *Rekomendasi Terbaik*")
 
-# Tambahkan daftar webtoon yang tersedia
-st.subheader("📜 Daftar Webtoon yang Tersedia")
-st.dataframe(webtoon_df.reset_index()[['judul']], use_container_width=True)
-
 webtoon = st.text_input("Masukkan Judul Webtoon", placeholder="Misal: 'True Beauty'")
 rekomendasi = st.button("🎯 Cari Rekomendasi")
 
@@ -78,6 +74,10 @@ if rekomendasi:
         st.subheader("🎉 Rekomendasi untuk Anda:")
         for item in hasil:
             st.markdown(f"🔹 {item}")
+
+# Tambahkan daftar webtoon di bawah search
+st.subheader("📜 Daftar Webtoon yang Tersedia")
+st.dataframe(webtoon_df.reset_index()[['judul']], use_container_width=True)
 
 # Tambahkan footer
 st.markdown("---")
